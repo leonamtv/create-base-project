@@ -4,7 +4,8 @@ import subprocess
 
 class Module :
     def __init__ ( self, name, path ):
-        pass
+        self.name = name
+        self.path = path
 
     def execute ( self, **kwargs ):
         pass

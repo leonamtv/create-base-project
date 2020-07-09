@@ -14,18 +14,10 @@ def menu ( path ) :
     ])
 
     if answers['type'] == 'Flutter':
-        
-        sub_answers = get_answers([
-            inquirer.Text('boilerplate', "Skip boilerplate? [y/N]")
-        ])
-        
-        flutter_project = Flutter(answers['name'], path)
-
-        if sub_answers['boilerplate'].lower() == 'y':
-            flutter_project.exec(skip_boilerplate=True)
-        else:
-            flutter_project.exec()
-
+        print(type(answers['name']))
+        flutter_project = Flutter(name=answers['name'], path=path)
+        flutter_project.menu()
+        flutter_project.execute()
     elif answers['type'] == 'Angular':
         pass
     else:
