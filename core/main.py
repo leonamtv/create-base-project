@@ -5,7 +5,7 @@ import inquirer
 import importlib
 
 from sys import argv
-from modules.base.module import Module
+from core.module import Module
 
 def get_answers ( questions ):
     return inquirer.prompt( questions )
@@ -44,6 +44,7 @@ if __name__ == "__main__":
     parser.add_argument('path', nargs=1, action='store', help='Path where the project will be created at.')
     parser.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS, help='Show this messages and exits.')
     parser.add_argument('-t', '--types', action='store_true', help='Print types of projects one can create.')
+    parser.add_argument('-c', '--create', action='store_true', help='Creates a new module.')
 
     args = parser.parse_args()
 
