@@ -2,7 +2,7 @@ import os
 import inquirer
 import subprocess
 
-from modules.base.module import Module
+from core.module import Module
 
 class Angular ( Module ):
 
@@ -24,9 +24,9 @@ class Angular ( Module ):
                     file.write(angular_main_template)
                     file.close()
             else :
-                raise Exception("Caminho do projeto vazio")
+                raise Exception("You have to provide a valid path")
         else:
-            raise Exception("Nome do projeto vazio.")
+            raise Exception("You have to provide a valid name")
 
     def menu ( self ):
         answers = inquirer.prompt([

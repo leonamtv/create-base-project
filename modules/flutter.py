@@ -2,7 +2,7 @@ import os
 import subprocess
 import inquirer
 
-from modules.base.module import Module
+from core.module import Module
 
 class Flutter ( Module ):
 
@@ -25,9 +25,9 @@ class Flutter ( Module ):
                     file.write(flutter_main_template.format(title = str(self.name)))
                     file.close()
             else :
-                raise Exception("Caminho do projeto vazio")
+                raise Exception("You have to provide a valid path")
         else:
-            raise Exception("Nome do projeto vazio.")
+            raise Exception("You have to provide a valid name")
 
 
     def menu ( self ) :
