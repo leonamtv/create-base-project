@@ -7,6 +7,10 @@ class Module :
         self.name = name
         self.path = path
 
+    def go ( self ):
+        self.menu()
+        self.execute()
+
     def execute ( self, **kwargs ):
         pass
 

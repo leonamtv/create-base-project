@@ -15,8 +15,7 @@ def get_answers ( questions ):
 
 def create_module ():
     newModule = NewModule(path=PATH_TO_MODULES)
-    newModule.menu()
-    newModule.execute()
+    newModule.go()
 
 def menu ( args ) :
 
@@ -41,8 +40,7 @@ def menu ( args ) :
                     inquirer.Text('name', "What is the name of the project?"),
                 ])
                 project = imported_classes[imported_classes_names.index(answers['type'])](answers['name'], args.path[0])
-                project.menu()
-                project.execute()
+                project.go()
             else:
                 raise Exception('You need to provide a path where the project will be created.')
 
