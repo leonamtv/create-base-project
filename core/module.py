@@ -7,6 +7,9 @@ class Module :
         self.name = name
         self.path = path
 
+    def check_if_can_create ( self ):
+        pass
+
     def go ( self ):
         self.menu()
         self.execute()
