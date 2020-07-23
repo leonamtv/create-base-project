@@ -2,7 +2,7 @@ import os
 import subprocess
 import inquirer
 
-from modules.module import Module
+from modules.base.module import Module
 
 class Flutter ( Module ):
 
@@ -15,7 +15,7 @@ class Flutter ( Module ):
         if self.name != '':
             if  self.path != '':
                 full_path = os.path.join( self.path, self.name )
-                if os.path.exists( full_path ):
+                if not os.path.exists( full_path ):
                     os.makedirs ( full_path )
                 command = self._create_command.format ( self.name, full_path )
                 cmd = subprocess.Popen(command.split(' '))
